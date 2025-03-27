@@ -29,10 +29,12 @@ namespace MVC_Train_Routing
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller}/{action}/{id:int?}/{name:alpha}",
-                defaults: new { Controller = "Movie", action = "GETMovie" },
+                pattern: "{controller}/{action}/{id?}",
+                defaults: new { Controller = "Movie", action = "GETMovie" }
               //  constraints: new { id = new IntRouteConstraint() }
-              constraints :new {id =@"\d{2}"});
+             // constraints :new {id =@"\d{2}"}
+             );
+
 
             app.Run();
         }
